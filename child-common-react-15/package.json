@@ -11,7 +11,7 @@
     "@ice/stark-app": "^1.0.0-0",
     "@icedesign/container": "^1.0.4",
     "@icedesign/theme": "^1.0.0",
-    "axios": "^0.17.1",
+    "axios": "^0.19.0",
     "moment": "^2.24.0",
     "react": "^15.0.0",
     "react-dom": "^15.0.0",
