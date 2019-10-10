@@ -1,9 +1,8 @@
 {
-  "name": "child2",
+  "name": "icestark-child-common",
+  "version": "0.1.0",
   "files": [
-    "src/",
-    "build/",
-    "public/"
+    "build/"
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
