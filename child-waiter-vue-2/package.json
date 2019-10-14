@@ -1,6 +1,6 @@
 {
   "name": "icestark-child-waiter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "files": [
     "dist/"
   ],
@@ -13,7 +13,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@ice/stark-app": "^1.0.0-0",
+    "@ice/stark-app": "^1.0.1",
     "element-ui": "^2.3.6",
     "normalize.css": "^8.0.0",
     "vue": "^2.5.13",
