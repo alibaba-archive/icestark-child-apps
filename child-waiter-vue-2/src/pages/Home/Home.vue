@@ -18,12 +18,6 @@
 import { appHistory } from '@ice/stark-app';
 
 export default {
-  mounted: () => {
-    console.log('Home mounted');
-  },
-  destroyed: () => {
-    console.log('Home destroyed');
-  },
   methods: {
     handleClick: () => {
       appHistory.push('/');
