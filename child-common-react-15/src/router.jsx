@@ -6,7 +6,7 @@ import {
 } from 'react-router-dom';
 import React from 'react';
 import path from 'path';
-import { getBasename } from '@ice/stark';
+import { getBasename } from '@ice/stark-app';
 import routes from '@/config/routes';
 
 const RouteItem = (props) => {
@@ -44,8 +44,8 @@ export default () => {
                     </Switch>
                   </RouteComponent>
                 ) : (
-                  <RouteItem key={id} {...props} />
-                );
+                    <RouteItem key={id} {...props} />
+                  );
               }}
             />
           );

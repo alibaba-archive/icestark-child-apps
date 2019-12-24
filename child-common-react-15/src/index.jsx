@@ -1,8 +1,22 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { getMountNode } from '@ice/stark';
+import { isInIcestark, getMountNode, registerAppEnter, registerAppLeave } from '@ice/stark-app';
 
 import router from './router';
 
-console.log('child2', React);
-ReactDOM.render(router(), getMountNode());
+const mountNode = getMountNode();
+
+if (isInIcestark()) {
+  registerAppEnter(() => {
+    console.log('child-common-react-15 ---------> mount');
+    ReactDOM.render(router(), mountNode);
+  });
+
+  registerAppLeave(() => {
+    ReactDOM.unmountComponentAtNode(mountNode);
+  });
+} else {
+  console.log('child-common-react-15 ---------> single mount');
+  ReactDOM.render(router(), mountNode);
+}
+
+

@@ -6,7 +6,7 @@
   ],
   "dependencies": {
     "@alifd/next": "^1.x",
-    "@ice/stark-app": "^1.0.1",
+    "@ice/stark-app": "^1.2.0",
     "@icedesign/container": "^1.0.4",
     "@icedesign/theme": "^1.0.0",
     "axios": "^0.17.1",
@@ -23,7 +23,7 @@
     "ice-plugin-fusion": "^0.1.4"
   },
   "scripts": {
-    "start": "ice-scripts dev -p 6666",
+    "start": "ice-scripts dev -p 5556",
     "build": "ice-scripts build",
     "prepublishOnly": "npm run build",
     "lint": "npm run eslint && npm run stylelint",

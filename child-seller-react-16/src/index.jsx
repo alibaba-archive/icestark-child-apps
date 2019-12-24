@@ -1,11 +1,23 @@
 import ReactDOM from 'react-dom';
-import { getMountNode, registerAppLeave } from '@ice/stark-app';
+import { isInIcestark, getMountNode, registerAppEnter, registerAppLeave } from '@ice/stark-app';
 
 import router from './router';
 
-// make sure the unmount event is triggered
-registerAppLeave(() => {
-  ReactDOM.unmountComponentAtNode(getMountNode());
-});
+const mountNode = getMountNode();
 
-ReactDOM.render(router(), getMountNode());
+// make sure the unmount event is triggered
+if (isInIcestark()) {
+  registerAppEnter(() => {
+    console.log('child-seller-react-16 ---------> mount');
+    ReactDOM.render(router(), mountNode);
+  });
+
+  ReactDOM.render(router(), mountNode);
+
+  registerAppLeave(() => {
+    ReactDOM.unmountComponentAtNode(mountNode);
+  });
+} else {
+  console.log('child-seller-react-16 ---------> single mount');
+  ReactDOM.render(router(), mountNode);
+}
