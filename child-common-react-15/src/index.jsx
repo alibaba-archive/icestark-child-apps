@@ -7,11 +7,12 @@ const mountNode = getMountNode();
 
 if (isInIcestark()) {
   registerAppEnter(() => {
-    console.log('child-common-react-15 ---------> mount');
+    console.log('child-common-react-15 ---------> appEnter');
     ReactDOM.render(router(), mountNode);
   });
 
   registerAppLeave(() => {
+    console.log('child-common-react-15 ---------> appLeave');
     ReactDOM.unmountComponentAtNode(mountNode);
   });
 } else {

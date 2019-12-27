@@ -14,15 +14,11 @@ const mountNode = getMountNode(document.getElementById('app'));
 let vue;
 if (isInIcestark()) {
   registerAppEnter(() => {
-    console.log('child-waiter-vue-2 ---------> mount');
+    console.log('child-waiter-vue-2 ---------> appEnter');
     vue = new Vue({
       router,
-      mounted: () => {
-        console.log('App mounted');
-      },
-      destroyed: () => {
-        console.log('App destroyed');
-      },
+      mounted: () => { },
+      destroyed: () => { },
       render: h => h(App),
     }).$mount();
     // for vue don't replace mountNode
@@ -32,6 +28,7 @@ if (isInIcestark()) {
 
   // trigger unmount manually
   registerAppLeave(() => {
+    console.log('child-waiter-vue-2 ---------> appLeave');
     vue && vue.$destroy();
   });
 
@@ -39,12 +36,8 @@ if (isInIcestark()) {
   console.log('child-waiter-vue-2 ---------> single mount');
   vue = new Vue({
     router,
-    mounted: () => {
-      console.log('App mounted');
-    },
-    destroyed: () => {
-      console.log('App destroyed');
-    },
+    mounted: () => { },
+    destroyed: () => { },
     render: h => h(App),
   }).$mount();
   // for vue don't replace mountNode

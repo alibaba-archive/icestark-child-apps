@@ -8,13 +8,12 @@ const mountNode = getMountNode();
 // make sure the unmount event is triggered
 if (isInIcestark()) {
   registerAppEnter(() => {
-    console.log('child-seller-react-16 ---------> mount');
+    console.log('child-seller-react-16 ---------> appEnter');
     ReactDOM.render(router(), mountNode);
   });
 
-  ReactDOM.render(router(), mountNode);
-
   registerAppLeave(() => {
+    console.log('child-seller-react-16 ---------> appLeave');
     ReactDOM.unmountComponentAtNode(mountNode);
   });
 } else {
