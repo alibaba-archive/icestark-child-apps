@@ -15,12 +15,10 @@
 </template>
 
 <script>
-import { appHistory } from '@ice/stark-app';
-
 export default {
   methods: {
     handleClick: () => {
-      appHistory.push('/');
+      window.history.pushState({}, '', '/dashboard');
     }
   }
 }

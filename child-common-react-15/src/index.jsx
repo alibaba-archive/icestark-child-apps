@@ -1,8 +1,18 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import { getMountNode } from '@ice/stark';
-
+import { isInIcestark, getMountNode, registerAppEnter, registerAppLeave } from '@ice/stark-app';
 import router from './router';
 
-console.log('child2', React);
-ReactDOM.render(router(), getMountNode());
+if (isInIcestark()) {
+  const mountNode = getMountNode();
+
+  registerAppEnter(() => {
+    ReactDOM.render(router(), mountNode);
+  });
+
+  // make sure the unmount event is triggered
+  registerAppLeave(() => {
+    ReactDOM.unmountComponentAtNode(mountNode);
+  });
+} else {
+  ReactDOM.render(router(), document.getElementById('ice-container'));
+}
