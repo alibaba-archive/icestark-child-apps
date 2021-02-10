@@ -1,0 +1,1 @@
+https://github.com/ice-lab/vue-materials/tree/master/scaffolds/icestark-child-app
